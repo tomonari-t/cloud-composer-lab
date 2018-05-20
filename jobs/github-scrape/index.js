@@ -8,7 +8,12 @@ const DATASET_NAME = 'github_trending';
 const TABLE_PREFIX = 'daily_';
 
 const main = async () => {
-  const browser = await pappeteer.launch({headless: false});
+  const browser = await pappeteer.launch({
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox'
+    ]
+  });
   const page = await browser.newPage();
   const githubPage = new GitHubPage(page);
   await githubPage.gotoTrendPage();

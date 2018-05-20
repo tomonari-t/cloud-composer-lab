@@ -4,7 +4,7 @@
   "description": "",
   "main": "scrape-github-tranding-js.js",
   "scripts": {
-    "start": "GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp-serviceaccount.json node index.js "
+    "start": "GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp-serviceaccount.json node index.js"
   },
   "author": "",
   "license": "ISC",
