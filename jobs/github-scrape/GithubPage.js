@@ -28,7 +28,7 @@ class GithubPage {
       description,
       starNum: parseInt(starNum, 10),
       forkedNum: parseInt(forkedNum, 10),
-      lang
+      lang: lang || ''
     };
   }
 }
