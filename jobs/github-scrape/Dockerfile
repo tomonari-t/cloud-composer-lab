@@ -44,5 +44,3 @@ RUN apt-get update \
 WORKDIR /app
 COPY . /app/
 RUN npm i
-
-ENTRYPOINT [ "npm", "start" ]
