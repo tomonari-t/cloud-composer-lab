@@ -42,7 +42,7 @@ RUN apt-get update \
       wget
 
 WORKDIR /app
-COPY ./* /app/
+COPY . /app/
 RUN npm i
 
 ENTRYPOINT [ "npm", "start" ]
