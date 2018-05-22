@@ -26,7 +26,7 @@ with models.DAG(
     ) as dag:
 
 
-    get_k8s_credinald = 'gcloud container clusters get-credentials us-central1-github-survey-j-73721e60-gke --zone us-central1-f'
+    get_k8s_credinald = 'gcloud container clusters get-credentials us-central1-github-survey-j-73721e60-gke --zone us-central1-f --project gas-webscraper'
     image_url = models.Variable.get('github_image_url')
     run_container = 'kubectl run puppeter --image={} --rm --attach=true --command -- npm start'.format(image_url)
     collect_data = BashOperator(
