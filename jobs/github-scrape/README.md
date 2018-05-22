@@ -27,6 +27,12 @@ location
 - airflow cluster zone
 - airflow cluster cluster name
 
+## install pypl pacages
+
+```sh
+% gcloud beta composer environments update --update-pypi-packages-from-file [composer env name] --location [compoer location] requirements.txt
+```
+
 ## upload dags to remote
 
 ```sh

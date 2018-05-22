@@ -1,8 +1,10 @@
 import datetime
 import os
 
+from slackclient import SlackClient
 from airflow import models
 from airflow.operators import BashOperator
+from airflow.operators import SlackAPIPostOperator
 from airflow.utils import trigger_rule
 
 yesterday = datetime.datetime.combine(
@@ -36,9 +38,13 @@ with models.DAG(
         dag=dag,
     )
 
-    success_task = BashOperator(
-        task_id='echo',
-        bash_command='echo done'
+    success_task = SlackAPIPostOperator(
+        task_id='notify_skack',
+        username='airflow',
+        token='xoxp-16701812533-48173599442-292225017239-0a6dd5ab5e617bd1adc37e4db93c85e3',
+        channel='#lab',
+        text='hello done',
+        dag=dag
     )
 
     collect_data >> success_task
