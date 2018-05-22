@@ -24,7 +24,8 @@ location
 
 - imageurl
 - projectid
-
+- airflow cluster zone
+- airflow cluster cluster name
 
 ## upload dags to remote
 
